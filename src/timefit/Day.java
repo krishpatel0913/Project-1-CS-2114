@@ -150,7 +150,7 @@ public class Day
 
             if (i < routines.size() - 1)
             {
-                result += ", ";
+                result += "\n";
             }
         }
 

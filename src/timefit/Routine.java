@@ -77,16 +77,14 @@ public class Routine
     }
 
 
-eparated String
-     */
     public String toString()
     {
         if (exercises.size() == 0)
         {
             return "";
         }
-
-        String result = "";
+        
+        String result = "[" + timeStart + ":00 - " + timeEnd + ":00] ";
 
         for (int i = 0; i < exercises.size(); i++)
         {
