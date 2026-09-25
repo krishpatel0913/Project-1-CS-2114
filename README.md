@@ -5,4 +5,4 @@ TimeFit is a text-based app that handles user input in order to create a persona
 To run TimeFit, please download the zip folder, unzip it, and run TimeFit as a Java Application.
 
 # System Diagram
-https://drive.google.com/file/d/1K-UO7quHbYI8-RpZ8IN7zvDZAdgnVIhE/view?usp=drive_link
+<img width="388" height="616" alt="Screenshot 2026-09-24 132037" src="https://github.com/user-attachments/assets/380ab291-f9c1-41d9-903a-b4841c24bba5" />
