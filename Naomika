@@ -1,5 +1,0 @@
-public class Naomika {
-    public static void main(String[] args) {
-        System.out.println("Naomika is on the team.");
-    }
-}
