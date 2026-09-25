@@ -17,6 +17,8 @@ public class TimeFit {
     private String goal;
     private List<Exercise> exerciseLibrary;
     private Day[] week;
+    private int streak;
+    private boolean running;
 
     // ----------------------------------------------------------
     /**
@@ -107,7 +109,6 @@ public class TimeFit {
      */
     public void initializeSchedule() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("=== Welcome to TimeFit ===");
         System.out.println("Select a Goal:");
         for (int i = 0; i < goalOptions.length; i++) {
             System.out.println(i + ": " + goalOptions[i]);
@@ -248,6 +249,51 @@ public class TimeFit {
             System.out.println();
         }
     }
+    
+    // ----------------------------------------------------------
+    /**
+     * counts streak.
+     */
+    public void countStreak() {
+        String[] daysOfWeek = {
+            "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+        };
+        Scanner scanner = new Scanner(System.in);
+        
+        for (int i = 0; i < daysOfWeek.length; i++) {
+            System.out.println("Did you complete your routine for " + daysOfWeek[i] + "?");
+            String response = null;
+            while (response == null) {
+                response = scanner.nextLine();
+                if (response.trim().equals("yes")) {
+                    streak++;
+                }
+                else if (response.trim().equals("no")) {
+                    streak = 0;
+                }
+                else {
+                    response = null;
+                    System.out.println("Please enter 'yes' or 'no'.");
+                }
+            }
+        }
+        System.out.println("Current Streak: " + streak);
+        System.out.println("Would you like to complete another week? Yes or No");
+        String response = null;
+        while (response == null) {
+            response = scanner.nextLine();
+            if (response.trim().equals("yes")) {
+                running = true;
+            }
+            else if (response.trim().equals("no")) {
+                running = false;
+            }
+            else {
+                response = null;
+                System.out.println("Please enter 'yes' or 'no'.");
+            }
+        }
+    }
 
     // ----------------------------------------------------------
     /**
@@ -258,8 +304,14 @@ public class TimeFit {
      */
     public static void main(String[] args) {
         TimeFit app = new TimeFit();
-        app.initializeSchedule();
-        app.randomizeSchedule();
-        app.printSchedule();
+        System.out.println("=== Welcome to TimeFit ===");
+        app.running = true;
+        app.streak = 0;
+        while (app.running) {
+            app.initializeSchedule();
+            app.randomizeSchedule();
+            app.printSchedule();
+            app.countStreak();
+        }
     }
 }
