@@ -3,6 +3,12 @@ package timefit;
 import student.TestCase;
 import java.util.List;
 
+// -------------------------------------------------------------------------
+/**
+ *  tests day
+ *  @author krish
+ *  @version Sep 24, 2026
+ */
 public class DayTest
     extends TestCase
 {
@@ -130,6 +136,34 @@ public class DayTest
      */
     public void testToStringEmpty()
     {
-        assertEquals("No Routines Scheduled", day.toString());
+        assertEquals("No Routines", day.toString());
     }
+    
+    /**
+     * tests adding a routine to the day
+     */
+    public void testAddRoutine()
+    {
+        Routine routine = new Routine(12, 14, "Strength");
+        day.addRoutine(routine);
+        assertEquals(routine.toString(), day.toString());
+    }
+    
+    /**
+     * Tests toString when there are multiple routines
+     */
+    public void testToStringRoutines()
+    {
+        Routine routine1 = new Routine(12, 14, "Strength");
+        Routine routine2 = new Routine(18, 19, "Cardio");
+
+        day.addRoutine(routine1);
+        day.addRoutine(routine2);
+
+        String expected =
+            routine1.toString() + ", " + routine2.toString();
+
+        assertEquals(expected, day.toString());
+    }
+    
 }
