@@ -4,7 +4,7 @@ TimeFit is a text-based app that handles user input in order to create a persona
 # Instructions
 Ensure you have the Java Development Kit (JDK 8 or higher) installed. You can check this by opening your terminal or command prompt and running:
 
-To run TimeFit, either: 
+To run TimeFit: 
 - Clone the repository using git clone https://github.com or download and extract the ZIP folder.
 - Open your preferred Java IDE and import the folder as an existing Java project.
 - Find the main class file (TimeFit.java), right-click it, and select Run As > Java Application.
